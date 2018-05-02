@@ -24,7 +24,7 @@ class Main {
     }
 
     addEventListeners() {
-        const { encryptBtn, dencryptBtn } = this.nodes;
+        const { encryptBtn, dencryptBtn, result } = this.nodes;
 
         encryptBtn.addEventListener('click', this.handleClickEncryptBtn);
         dencryptBtn.addEventListener('click', this.handleClickDencryptBtn);
@@ -37,12 +37,6 @@ class Main {
 
     dencrypt(key, password) {
         return CryptoJS.AES.decrypt(key, password).toString(CryptoJS.enc.Utf8);
-    }
-
-    handleChangePasswordLength({ target }) {
-        if (Number(target.value) < Number(target.attributes.min.value)) {
-            target.value = target.attributes.min.value;
-        }
     }
 
     handleClickEncryptBtn() {
