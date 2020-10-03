@@ -1,4 +1,4 @@
-# [Password creator](https://alfimois.github.io/Password-creator)
+# [Password creator](https://alfimois.github.io/Password-creator) (clickable)
 
 This tool helps you to create a strong password by using a simple one.
 
