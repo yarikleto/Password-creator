@@ -1,4 +1,5 @@
 const DEFAULT_SIZE = 20;
+const COPY_DELAY = 500;
 
 export default class Controller {
   constructor({ view, model }) {
@@ -31,7 +32,7 @@ export default class Controller {
     copyBtn.innerText = "Copied!";
     setTimeout(() => {
       copyBtn.innerText = titleOfCopyBtn;
-    }, 500);
+    }, COPY_DELAY);
   }
 
   _getValidSizeHash() {
