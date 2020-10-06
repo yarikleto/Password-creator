@@ -19,7 +19,7 @@ export default class View {
   }
 
   addEventListeners(handlers) {
-    const { encryptBtn, dencryptBtn, copyBtn } = this.nodes;
+    const { encryptBtn, copyBtn } = this.nodes;
     const {
       onClickEncryptBtn,
       onClickCopyBtn
