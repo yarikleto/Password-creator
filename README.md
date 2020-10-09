@@ -1,4 +1,4 @@
-# [Password creator](https://yarikleto.github.io/Password-creator) (clickable)
+# [Password creator](https://yarikleto.github.io/Password-creator/dist) (clickable)
 
 This tool helps you to create a strong password by using a simple one. It uses [SHA3](https://en.wikipedia.org/wiki/SHA-3) algorithm under the hood.
 
