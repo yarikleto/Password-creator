@@ -12,11 +12,11 @@
         <div class="form">
             <div class="form__message">
                 <label for="text">Message:</label>
-                <input type="text" name="text" id="text" placeholder="Message">
+                <input type="text" name="text" id="text" placeholder="Message *">
             </div>
             <div class="form__password">
                 <label for="text">Password:</label>
-                <input type="text" name="password" id="password" placeholder="Password">
+                <input type="text" name="password" id="password" placeholder="Password *">
             </div>
             <div class="form__size">
                 <label for="text">Size:</label>
@@ -26,15 +26,15 @@
                     id="size"
                     step="1"
                     min="1",
-                    value="20"
+                    placeholder="Size"
                     
                 >
             </div>
             <div class="form__buttons">
-                <button type="button" id="encrypt">Encrypt</button>
+                <button class="enc-btn" type="button" id="encrypt">Encrypt</button>
             </div>
             <input class="form__result" type="text" readonly id="result-input">
-            <button type="button" id="copy-btn">Copy</button>
+            <button class="copy-btn" type="button" id="copy-btn">Copy</button>
         </div>
       </div>
     </main>
