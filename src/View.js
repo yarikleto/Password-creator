@@ -32,20 +32,19 @@ export default class View {
       copyBtn.style.display = "block";
     });
     copyBtn.addEventListener("click", onClickCopyBtn);
+
+    inputs.forEach((item) => {
+      const prevSibling = item.previousElementSibling;
+    
+      item.addEventListener("focus", () => {
+         prevSibling.classList.add("movable-span");
+         prevSibling.style.color = "#1976d2";
+       });
+      
+      item.addEventListener("focusout", () => {
+        prevSibling.style.color = "#757575";
+        if (!item.value) prevSibling.classList.remove("movable-span");
+      });
+    });
   }
 }
-
-inputs.forEach((item) => {
-  item.addEventListener("focus", () => {
-    item.previousElementSibling.classList.add("spanMove");
-    item.previousElementSibling.style.color = "#1976d2";
-  });
-  item.addEventListener("focusout", () => {
-    if (item.value == "") {
-      item.previousElementSibling.classList.remove("spanMove");
-      item.previousElementSibling.style.color = "#757575";
-    } else {
-      item.previousElementSibling.style.color = "#757575";
-    }
-  });
-});
