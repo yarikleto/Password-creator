@@ -7,31 +7,32 @@
     <title>Password creator</title>
 </head>
 <body>
-    <div class="form">
-        <div class="form__message">
-            <label for="text">Message:</label>
-            <input type="text" name="text" id="text">
+    <main class="main">
+        <div class="form">
+            <div class="form__message">
+                <label class="label" for="text">Message *</label>
+                <input class="animation" type="text" name="text" id="text">
+            </div>
+            <div class="form__password">
+                <label class="label" for="password">Password *</label>
+                <input class="animation" type="text" name="password" id="password">
+            </div>
+            <div class="form__size">
+                <label class="label" for="size">Size</label>
+                <input class="animation"
+                    type="number"
+                    name="size"
+                    id="size"
+                    step="1"
+                    min="1",
+                >
+            </div>
+            <div class="form__buttons">
+                <button class="encrypt__button" type="button" id="encrypt">Encrypt</button>
+            </div>
+            <input class="form__result" type="text" readonly id="result-input">
+            <button type="button" id="copy-btn">Copy</button>
         </div>
-        <div class="form__password">
-            <label for="text">Password:</label>
-            <input type="text" name="password" id="password">
-        </div>
-        <div class="form__size">
-            <label for="text">Size:</label>
-            <input
-                type="number"
-                name="size"
-                id="size"
-                step="1"
-                min="1",
-                value="20"
-            >
-        </div>
-        <div class="form__buttons">
-            <button type="button" id="encrypt">Encrypt</button>
-        </div>
-        <input class="form__result" type="text" readonly id="result-input">
-        <button type="button" id="copy-btn">Copy</button>
-    </div>
+    </main>
 </body>
 </html>

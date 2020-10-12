@@ -1,5 +1,7 @@
 import "./View.css";
 
+const inputs = document.querySelectorAll('.animation');
+
 export default class View {
   constructor() {
     this.nodes = {};
@@ -25,7 +27,25 @@ export default class View {
       onClickCopyBtn
     } = handlers;
 
-    encryptBtn.addEventListener("click", onClickEncryptBtn);
+    encryptBtn.addEventListener("click", () => {
+      onClickEncryptBtn();
+      copyBtn.style.display = "block";
+    });
     copyBtn.addEventListener("click", onClickCopyBtn);
   }
 }
+
+inputs.forEach((item) => {
+  item.addEventListener("focus", () => {
+    item.previousElementSibling.classList.add("spanMove");
+    item.previousElementSibling.style.color = "#1976d2";
+  });
+  item.addEventListener("focusout", () => {
+    if (item.value == "") {
+      item.previousElementSibling.classList.remove("spanMove");
+      item.previousElementSibling.style.color = "#757575";
+    } else {
+      item.previousElementSibling.style.color = "#757575";
+    }
+  });
+});
