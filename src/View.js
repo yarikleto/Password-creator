@@ -16,31 +16,28 @@ export default class View {
       resultInput: document.getElementById("result-input"),
       encryptBtn: document.getElementById("encrypt"),
       copyBtn: document.getElementById("copy-btn"),
-      inputs: document.querySelectorAll(".animation"),
+      formInputs: document.querySelectorAll(".form input"),
     };
   }
 
   addEventListeners(handlers) {
-    const { encryptBtn, copyBtn, inputs } = this.nodes;
-    const {
-      onClickEncryptBtn,
-      onClickCopyBtn
-    } = handlers;
+    const { encryptBtn, copyBtn, formInputs } = this.nodes;
+    const { onClickEncryptBtn, onClickCopyBtn } = handlers;
 
     encryptBtn.addEventListener("click", onClickEncryptBtn);
     copyBtn.addEventListener("click", onClickCopyBtn);
 
-    inputs.forEach((item) => {
-      const prevSibling = item.previousElementSibling;
+    formInputs.forEach(input => {
+      const label = input.previousElementSibling;
     
-      item.addEventListener("focus", () => {
-         prevSibling.classList.add("movable-span");
-         prevSibling.style.color = COLORS.dark;
+      input.addEventListener("focus", () => {
+        label.classList.add("movable-span");
+         label.style.color = COLORS.dark;
        });
       
-      item.addEventListener("focusout", () => {
-        prevSibling.style.color = COLORS.gray;
-        if (!item.value) prevSibling.classList.remove("movable-span");
+       input.addEventListener("focusout", () => {
+        label.style.color = COLORS.gray;
+        if (!input.value) label.classList.remove("movable-span");
       });
     });
   }

@@ -41,7 +41,7 @@ input {
   border-bottom: 1px solid #8f8f8f;
 }
 
-.animation:hover {
+input:hover {
   border-bottom: 1px solid #1976d2;
 }
 
