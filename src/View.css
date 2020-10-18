@@ -45,6 +45,10 @@ input:hover {
   border-bottom: 1px solid #1976d2;
 }
 
+.result-input:hover {
+  border-bottom: none;
+}
+
 .label {
   position: absolute;
   top: -2px;
@@ -88,7 +92,7 @@ input:hover {
   background-color: #0c5fa2;
 }
 
-.form__result {
+.result-input {
   display: block;
   width: 400px;
   margin: 0 auto;
