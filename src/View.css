@@ -64,14 +64,12 @@ input {
 }
 
 .form__buttons {
-  margin: 0 auto;
-  text-align: center;
-  color: #FFF;
-  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.encrypt__button {
-  width: 400px;
+.button {
+  width: 150px;
   height: 35px;
   background-color: #1976d2;
   color: #fff;
@@ -86,7 +84,7 @@ input {
   margin-bottom: 12px;
 }
 
-.encrypt__button:hover {
+.button:hover {
   background-color: #0c5fa2;
 }
 
@@ -96,11 +94,4 @@ input {
   margin: 0 auto;
   border: 0;
   text-align: center;
-}
-
-#copy-btn {
-  border-radius: 4px;
-  outline: none;
-  width: 60px;
-  display: none;
 }
