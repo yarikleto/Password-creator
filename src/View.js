@@ -10,6 +10,7 @@ export default class View {
 
   _saveDomNodes() {
     this.nodes = {
+      body: document.body,
       text: document.getElementById("text"),
       password: document.getElementById("password"),
       size: document.getElementById("size"),
@@ -18,6 +19,10 @@ export default class View {
       copyBtn: document.getElementById("copy-btn"),
       formInputs: document.querySelectorAll(".form input"),
     };
+  }
+
+  show() {
+    this.nodes.body.classList.add("displayed");
   }
 
   addEventListeners(handlers) {
@@ -35,7 +40,7 @@ export default class View {
          label.style.color = COLORS.dark;
        });
       
-       input.addEventListener("focusout", () => {
+      input.addEventListener("focusout", () => {
         label.style.color = COLORS.gray;
         if (!input.value) label.classList.remove("movable-span");
       });

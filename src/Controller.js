@@ -10,6 +10,7 @@ export default class Controller {
       onClickEncryptBtn: this._handleClickEncryptBtn.bind(this),
       onClickCopyBtn: this._handleClickCopyBtn.bind(this),
     });
+    this.view.show();
   }
 
   _handleClickEncryptBtn() {
