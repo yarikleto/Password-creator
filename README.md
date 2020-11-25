@@ -2,7 +2,7 @@
 <img src="https://i.ibb.co/QKqzprq/Screenshot-2020-11-25-at-02-04-09.png"/>
 </a>
 
-<br>
+---
 
 This tool helps you to create a strong password by using a simple one.
 It uses [SHA3](https://en.wikipedia.org/wiki/SHA-3) algorithm under the hood.
