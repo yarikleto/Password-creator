@@ -6,7 +6,8 @@ body {
   margin: 0;
   opacity: 0;
   transition: opacity 1s linear;
-  font-size: 18px;
+  font-size: 14px;
+  font-family: sans-serif, Tahoma, Roboto;
 }
 
 body.displayed {
@@ -32,7 +33,6 @@ body.displayed {
 }
 
 .form__title {
-  font-family: "Segoe UI", Roboto, sans-serif;
   text-align: center;
   font-weight: 100;
   font-size: 2rem;
@@ -77,10 +77,9 @@ input:hover {
   position: absolute;
   top: -2px;
   font-size: 1rem;
-  font-family: "Segoe UI", Roboto, sans-serif;
   font-weight: 400;
   line-height: 1;
-  color: #969696;
+  color: #cecdcd;
   transition: 150ms;
   cursor: text;
 }
@@ -100,14 +99,13 @@ input:hover {
   width: 150px;
   height: 35px;
   background-color:#5eb8b0;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: #fff;
   border-radius: 4px;
   border: none;
   outline: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 100;
   cursor: pointer;
   transition: all 200ms;
 }

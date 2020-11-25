@@ -1,4 +1,4 @@
 export const COLORS = {
   dark: "#5eb8b0",
-  gray: "#969696"
+  gray: "#cecdcd"
 };
