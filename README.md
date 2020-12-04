@@ -1,5 +1,5 @@
 <a href="https://yarikleto.github.io/Password-creator/dist/" target="_blank">
-<img src="https://i.ibb.co/QKqzprq/Screenshot-2020-11-25-at-02-04-09.png"/>
+<img src="./password_creator.jpg"/>
 </a>
 
 ---
