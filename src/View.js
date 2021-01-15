@@ -11,12 +11,12 @@ export default class View {
   _saveDomNodes() {
     this.nodes = {
       body: document.body,
-      text: document.getElementById("text"),
+      appName: document.getElementById("app-name"),
+      login: document.getElementById("login"),
       password: document.getElementById("password"),
       size: document.getElementById("size"),
       resultInput: document.getElementById("result-input"),
       encryptBtn: document.getElementById("encrypt"),
-      copyBtn: document.getElementById("copy-btn"),
       formInputs: document.querySelectorAll(".form input"),
     };
   }
@@ -26,11 +26,12 @@ export default class View {
   }
 
   addEventListeners(handlers) {
-    const { encryptBtn, copyBtn, formInputs } = this.nodes;
-    const { onClickEncryptBtn, onClickCopyBtn } = handlers;
+    const { appName, login, encryptBtn, formInputs } = this.nodes;
+    const { onClickEncryptBtn, onChangeAppName, onChangeLogin } = handlers;
 
+    appName.addEventListener("input", onChangeAppName);
+    login.addEventListener("input", onChangeLogin);
     encryptBtn.addEventListener("click", onClickEncryptBtn);
-    copyBtn.addEventListener("click", onClickCopyBtn);
 
     formInputs.forEach(input => {
       const label = input.previousElementSibling;

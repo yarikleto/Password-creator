@@ -1,5 +1,5 @@
 const DEFAULT_SIZE = 20;
-const COPY_DELAY = 500;
+const COPY_DELAY = 1000;
 
 export default class Controller {
   constructor({ view, model }) {
@@ -7,36 +7,51 @@ export default class Controller {
     this.model = model;
 
     this.view.addEventListeners({
-      onClickEncryptBtn: this._handleClickEncryptBtn.bind(this),
-      onClickCopyBtn: this._handleClickCopyBtn.bind(this),
+      onClickEncryptBtn: this.handleClickEncryptBtn.bind(this),
+      onChangeAppName: this.handleChangeAppName.bind(this),
+      onChangeLogin: this.handleChangeLogin.bind(this),
+
     });
     this.view.show();
   }
 
-  _handleClickEncryptBtn() {
-    const { text, password, resultInput } = this.view.nodes;
-
-    if (!text.value || !password.value) return;
-    resultInput.value = this.model.encrypt({
-      text: text.value,
-      password: password.value,
-      size: this._getValidSizeHash(),
-    });
+  handleChangeAppName() {
+    const appName = this.view.nodes.appName;
+    appName.value = appName.value.toLowerCase();
   }
 
-  _handleClickCopyBtn() {
-    const { resultInput, copyBtn } = this.view.nodes;
-    const titleOfCopyBtn = copyBtn.innerText;
+  handleChangeLogin() {
+    const login = this.view.nodes.login;
+    login.value = login.value.toLowerCase();
+  }
+
+  handleClickEncryptBtn() {
+    const {
+      appName, login, password, resultInput, encryptBtn
+    } = this.view.nodes;
+    const textOfCopyBtn = encryptBtn.innerText;
+
+    if (!login.value || !password.value) {
+      resultInput.value = '';
+      return;
+    }
+
+    resultInput.value = this.model.encrypt({
+      appName: appName.value.trim(),
+      login: login.value.trim(),
+      password: password.value.trim(),
+      size: this.getValidSizeHash(),
+    });
 
     resultInput.select();
     document.execCommand("copy");
-    copyBtn.innerText = "Copied!";
+    encryptBtn.innerText = "Copied!";
     setTimeout(() => {
-      copyBtn.innerText = titleOfCopyBtn;
+      encryptBtn.innerText = textOfCopyBtn;
     }, COPY_DELAY);
   }
 
-  _getValidSizeHash() {
+  getValidSizeHash() {
     const { size } = this.view.nodes;
     return Math.trunc(Math.abs(Number(size.value))) || DEFAULT_SIZE;
   }

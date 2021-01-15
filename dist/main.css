@@ -38,7 +38,8 @@ body.displayed {
   font-size: 2rem;
 }
 
-.form__message,
+.form__app-name,
+.form__login,
 .form__password,
 .form__size {
   margin-bottom: 40px;
@@ -46,7 +47,7 @@ body.displayed {
   position: relative;
 }
 
-.form__message {
+.form__login {
   margin-top: 40px;
 }
 
