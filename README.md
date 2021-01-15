@@ -5,31 +5,36 @@
 ---
 
 This tool helps you to create a strong password by using a simple one.
-It uses [SHA3](https://en.wikipedia.org/wiki/SHA-3) algorithm under the hood.
+
+###### It uses [SHA3](https://en.wikipedia.org/wiki/SHA-3) algorithm under the hood.
 
 
 ### Examples
 
-You need to know only one password. For example - `supermanpass`.
+You need to know only one password. For example - `my_easy_password`.
 
-- Message: `superman33@gmail.com`
-- Passowrd: `supermanpass`
+- App name: ``
+- Login *: `superman33@gmail.com`
+- Passowrd *: `my_easy_password`
 - Length: `20`
-- Result: `7gH12wa0EraHPFDPghih`
+- Result: `TwAwpvi4Rj1PrgiL8ZZA`
 ---
-- Message: `steam superman33`
-- Passowrd: `supermanpass`
-- Length: `5`
-- Result: `Yg7tK`
----
-- Message: `gmail:superman33`
-- Passowrd: `supermanpass`
-- Length: `30`
-- Result: `6gxkRNnwJ6nHaCODM0Yn9vSR135Edu`
----
-- Message: `instagram mega_cat`
-- Passowrd: `supermanpass`
+- App name: `steam`
+- Login *: `superman33`
+- Passowrd *: `my_easy_password`
 - Length: `10`
-- Result: `7AcAFKqzaA`
+- Result: `rwje9gPWe3`
+---
+- App name: `gmail`
+- Login *: `superman33`
+- Passowrd *: `my_easy_password`
+- Length: `30`
+- Result: `SgqnHd2p4KVLFoBExIdbdY7OuFaNw6`
+---
+- App name: `instagram`
+- Login *: `@mega_cat`
+- Passowrd: `my_easy_password`
+- Length: `40`
+- Result: `8wOuTElCmf1hcuRZCJGWFWO7JOze4WmI0Em98yVB`
 
-#### Simple rule of security: Each account must have a unique password
+#### A simple rule of security: Each account must have a unique password

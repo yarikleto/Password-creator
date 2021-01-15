@@ -17,12 +17,12 @@ export default class Controller {
 
   handleChangeAppName() {
     const appName = this.view.nodes.appName;
-    appName.value = appName.value.toLowerCase();
+    appName.value = appName.value.toLowerCase().trim();
   }
 
   handleChangeLogin() {
     const login = this.view.nodes.login;
-    login.value = login.value.toLowerCase();
+    login.value = login.value.toLowerCase().trim();
   }
 
   handleClickEncryptBtn() {
