@@ -17,12 +17,17 @@ export default class Controller {
 
   handleChangeAppName() {
     const appName = this.view.nodes.appName;
-    appName.value = appName.value.toLowerCase().trim();
+    appName.value = appName.value
+      .toLowerCase()
+      .replace(/\s{2,}/g, ' ')
+      .replace(/^\s+/g, '');
   }
 
   handleChangeLogin() {
     const login = this.view.nodes.login;
-    login.value = login.value.toLowerCase().trim();
+    login.value = login.value
+      .toLowerCase()
+      .replace(/\s/g, '');
   }
 
   handleClickEncryptBtn() {
