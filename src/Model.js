@@ -10,7 +10,7 @@ export default class Model {
 
     console.clear();
     console.warn(`
-      If you don't want to use an external crypto library (this app are using it),
+      If you don't want to use an external crypto library (this app is using it),
       because there is less control over the code, or you want to check the security,
       do local copy the app, etc.
 
@@ -18,7 +18,7 @@ export default class Model {
       it uses the local SHA3 implementation.
       And you can check the security of the code of local SHA3 implementation.
 
-      !!!Old implementation didn't delete for backward compatibility!!!
+      !!!The old implementation didn't delete for backward compatibility!!!
     `);
     console.log(
       '----------------\n',
