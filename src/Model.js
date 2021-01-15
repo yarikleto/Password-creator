@@ -10,9 +10,9 @@ export default class Model {
 
     console.clear();
     console.warn(`
-      If you don't want to use an external crypto library (this app is using it),
+      USE THIS HASH if you don't want to use an external crypto library (this app is using it),
       because there is less control over the code, or you want to check the security,
-      do local copy the app, etc.
+      doing local copy the app, etc.
 
       Otherwise, this hash will never change, because
       it uses the local SHA3 implementation.
