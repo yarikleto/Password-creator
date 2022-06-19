@@ -1,9 +1,9 @@
-import isOdd from './isOdd';
+import { isOdd } from './isOdd';
 
 const REGEXP_OF_VALID_CHAR = /\w/i; // numbers and chars
 const isValidChar = char => Boolean(char.match(REGEXP_OF_VALID_CHAR));
 
-const cutHash = size => hash => {
+export const cutHash = size => hash => {
   const HASH_LAST_INDEX = hash.length - 1;
   let result = "";
   let i = 0;
@@ -23,7 +23,7 @@ const cutHash = size => hash => {
   return result;
 };
 
-const cutHashV2 = size => hash => {
+export const cutHashV2 = size => hash => {
   const HASH_LAST_INDEX = hash.length - 1;
   let result = "";
   let i = 0;
@@ -40,5 +40,3 @@ const cutHashV2 = size => hash => {
 
   return result;
 };
-
-export { cutHash, cutHashV2 };

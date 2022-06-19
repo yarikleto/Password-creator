@@ -1,3 +1,1 @@
-const isOdd = n => Boolean(n % 2);
-
-export default isOdd;
+export const isOdd = n => Boolean(n % 2);

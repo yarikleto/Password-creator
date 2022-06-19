@@ -75,6 +75,7 @@ input:hover {
 }
 
 .label {
+  user-select: none;
   position: absolute;
   top: -2px;
   font-size: 1rem;
@@ -111,11 +112,17 @@ input:hover {
   transition: all 200ms;
 }
 
-.button:hover {
+.button:disabled {
+  background-color: #ebebeb;
+  color: #cecdcd;
+  cursor: not-allowed;
+}
+
+.button:not(:disabled):hover {
   opacity: 0.8;
 }
 
-.button:active {
+.button:not(:disabled):active {
   transform: scale(1.05);
 }
 

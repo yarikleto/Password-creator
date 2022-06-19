@@ -1,63 +1,55 @@
-const DEFAULT_SIZE = 20;
-const COPY_DELAY = 1000;
+import hmacSHA3 from 'crypto-js/hmac-sha3';
+import Base64 from 'crypto-js/enc-base64';
+
+import { compose, cutHash, cutHashV2 } from './helpers';
+
+const encrypt = ({ appName, login, password, size }) => {
+  const text = appName ? `${appName} ${login}` : login;
+  const hash = Base64.stringify(hmacSHA3(text, password));
+
+  return compose(
+    cutHash(size)
+  )(hash);
+}
 
 export default class Controller {
-  constructor({ view, model }) {
+  constructor(view, model) {
     this.view = view;
     this.model = model;
 
-    this.view.addEventListeners({
-      onClickEncryptBtn: this.handleClickEncryptBtn.bind(this),
-      onChangeAppName: this.handleChangeAppName.bind(this),
-      onChangeLogin: this.handleChangeLogin.bind(this),
-
+    this.model.updateState({
+      initialized: true,
     });
-    this.view.show();
+
+    this.view.encryptButton.on('click', this.#onClickEncryptBtn.bind(this));
+    this.view.appName.on('change', (value) => this.model.updateState({ appName: value }));
+    this.view.login.on('change', (value) => this.model.updateState({ login: value }));
+    this.view.password.on('change', (value) => this.model.updateState({ password: value }));
+    this.view.size.on('change', (value) => this.model.updateState({ size: value }));
   }
 
-  handleChangeAppName() {
-    const appName = this.view.nodes.appName;
-    appName.value = appName.value
-      .toLowerCase()
-      .replace(/\s{2,}/g, ' ')
-      .replace(/^\s+/g, '');
-  }
+  #onClickEncryptBtn() {
+    const { appName, login, password, size } = this.model.getState();
 
-  handleChangeLogin() {
-    const login = this.view.nodes.login;
-    login.value = login.value
-      .toLowerCase()
-      .replace(/\s/g, '');
-  }
-
-  handleClickEncryptBtn() {
-    const {
-      appName, login, password, resultInput, encryptBtn
-    } = this.view.nodes;
-    const textOfCopyBtn = encryptBtn.innerText;
-
-    if (!login.value || !password.value) {
-      resultInput.value = '';
+    if (!login || !password) {
+      this.model.updateState({
+        result: '',
+      })
       return;
     }
 
-    resultInput.value = this.model.encrypt({
-      appName: appName.value.trim(),
-      login: login.value.trim(),
-      password: password.value.trim(),
-      size: this.getValidSizeHash(),
+    const hash = encrypt({
+      appName,
+      login,
+      password,
+      size,
     });
 
-    resultInput.select();
-    document.execCommand("copy");
-    encryptBtn.innerText = "Copied!";
-    setTimeout(() => {
-      encryptBtn.innerText = textOfCopyBtn;
-    }, COPY_DELAY);
-  }
+    this.model.updateState({
+      result: hash,
+    });
 
-  getValidSizeHash() {
-    const { size } = this.view.nodes;
-    return Math.trunc(Math.abs(Number(size.value))) || DEFAULT_SIZE;
+    this.view.result.copyValue();
+    this.view.encryptButton.changTextToTime("Copied!", 1000);
   }
 }
