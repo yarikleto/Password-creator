@@ -8,9 +8,4 @@ export class Result {
   updateValue(value) {
     this.#rootNode.value = value;
   }
-
-  copyValue() {
-    this.#rootNode.select();
-    document.execCommand("copy");
-  }
 }

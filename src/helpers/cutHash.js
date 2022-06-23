@@ -3,7 +3,7 @@ import { isOdd } from './isOdd';
 const REGEXP_OF_VALID_CHAR = /\w/i; // numbers and chars
 const isValidChar = char => Boolean(char.match(REGEXP_OF_VALID_CHAR));
 
-export const cutHash = size => hash => {
+export const cutHash = (hash, size) => {
   const HASH_LAST_INDEX = hash.length - 1;
   let result = "";
   let i = 0;
