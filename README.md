@@ -2,12 +2,13 @@
 <img src="./password_creator.jpg"/>
 </a>
 
----
+#### A simple rule of security: Each account must have a unique password
 
 This tool helps you to create a strong password by using a simple one.
 
 ###### It uses [SHA3](https://en.wikipedia.org/wiki/SHA-3) algorithm under the hood.
 
+---
 
 ### Examples
 
@@ -36,5 +37,3 @@ You need to know only one password. For example - `my_easy_password`.
 - Passowrd: `my_easy_password`
 - Length: `40`
 - Result: `8wOuTElCmf1hcuRZCJGWFWO7JOze4WmI0Em98yVB`
-
-#### A simple rule of security: Each account must have a unique password
