@@ -10,6 +10,10 @@ export class EncryptButton extends EventEmitter  {
     this.#rootNode.addEventListener("click", this.#onClick.bind(this));
   }
 
+  get isDisabled() {
+    return this.#rootNode.disabled
+  }
+
   updateValue({ disabled }) {
     this.#rootNode.disabled = disabled;
   }
