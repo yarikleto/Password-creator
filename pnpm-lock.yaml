@@ -1083,9 +1083,14 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /follow-redirects@1.13.0:
-    resolution: {integrity: sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA==}
+  /follow-redirects@1.15.2:
+    resolution: {integrity: sha512-VQLG33o04KaQ8uYi2tVNbdrWp1QWxNNea+nmIB4EVM28v0hmP17z7aG1+wAkNzVq4KeXTq3221ye5qTJP91JwA==}
     engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
     dev: true
 
   /forwarded@0.2.0:
@@ -1288,6 +1293,8 @@ packages:
       is-glob: 4.0.1
       is-plain-obj: 3.0.0
       micromatch: 4.0.5
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /http-proxy@1.18.1:
@@ -1295,8 +1302,10 @@ packages:
     engines: {node: '>=8.0.0'}
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.13.0
+      follow-redirects: 1.15.2
       requires-port: 1.0.0
+    transitivePeerDependencies:
+      - debug
     dev: true
 
   /human-signals@2.1.0:
@@ -2488,6 +2497,7 @@ packages:
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
+      - debug
       - supports-color
       - utf-8-validate
     dev: true
